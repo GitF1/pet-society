@@ -7,6 +7,7 @@ export default function HomeScreen() {
       <Text>Home Screen</Text>
       <Link href="/user/activity">Activity</Link>
       <Link href="/user/friend-request">Request</Link>
+      <Link href="/user/friend-request">Test</Link>
     </View>
   );
 }
