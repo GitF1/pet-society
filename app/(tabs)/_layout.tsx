@@ -1,12 +1,12 @@
-import React, { useCallback, useState } from "react";
-import { Tabs } from "expo-router";
-import { Pressable } from "react-native";
+import React, { useCallback, useState } from 'react';
+import { Tabs } from 'expo-router';
+import { Pressable } from 'react-native';
 
-import Colors from "@/constants/Colors";
-import { useColorScheme } from "@/hooks/useColorScheme";
-import { useClientOnlyValue } from "@/hooks/useClientOnlyValue";
-import ProfileModal from "@/components/ProfileModal";
-import { TabConfig, TabBarIcon, TAB_CONFIG } from "@/utils/tabs/setting";
+import Colors from '@/constants/Colors';
+import { useColorScheme } from '@/hooks/useColorScheme';
+import { useClientOnlyValue } from '@/hooks/useClientOnlyValue';
+import ProfileModal from '@/components/ProfileModal';
+import { TabConfig, TabBarIcon, TAB_CONFIG } from '@/utils/tabs/setting';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -20,7 +20,7 @@ export default function TabLayout() {
       ),
     };
 
-    if (tab.name === "profile") {
+    if (tab.name === 'profile') {
       return {
         ...baseOptions,
         tabBarButton: (props: any) => (
@@ -36,26 +36,21 @@ export default function TabLayout() {
     <>
       <Tabs
         screenOptions={{
-          tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
+          tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
           tabBarStyle: {
-            backgroundColor: Colors[colorScheme ?? "light"].primary,
+            backgroundColor: Colors[colorScheme ?? 'light'].primary,
             height: 60,
           },
           headerShown: useClientOnlyValue(false, true),
-        }}
-      >
-        {TAB_CONFIG.map((tab) => (
-          <Tabs.Screen
-            key={tab.name}
-            name={tab.name}
-            options={getTabOptions(tab)}
-          />
+        }}>
+        {TAB_CONFIG.map(tab => (
+          <Tabs.Screen key={tab.name} name={tab.name} options={getTabOptions(tab)} />
         ))}
       </Tabs>
-      <ProfileModal
+      {/* <ProfileModal
         visible={isProfileModalVisible}
         onClose={() => setProfileModalVisible(false)}
-      />
+      /> */}
     </>
   );
 }
