@@ -31,6 +31,27 @@ const images = [
   { id: "4", uri: "https://placehold.co/200x200/000000/FFFFFF/png" },
   { id: "5", uri: "https://placehold.co/200x200/000000/FFFFFF/png" },
   { id: "6", uri: "https://placehold.co/200x200" },
+  { id: "7", uri: "https://placehold.co/200x200/000000/FFFFFF/png" },
+  {
+    id: "8",
+    uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDXVmx6QegOP3TG7-e4VOwlhb-kMd3heeQ-w&s",
+  },
+  {
+    id: "9",
+    uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKk4rdmQiuOkGcYKKJQBMT-9WxDeyD7Rbs9Q&s",
+  },
+  {
+    id: "10",
+    uri: "https://static.wikia.nocookie.net/nichijou/images/2/26/Sakamoto.png/revision/latest?cb=20190531163434",
+  },
+  {
+    id: "11",
+    uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKk4rdmQiuOkGcYKKJQBMT-9WxDeyD7Rbs9Q&s",
+  },
+  {
+    id: "12",
+    uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKk4rdmQiuOkGcYKKJQBMT-9WxDeyD7Rbs9Q&s",
+  },
 ];
 
 const hashtags = [
@@ -93,7 +114,18 @@ export default function SearchScreen() {
             <SearchHistoryHeader />
             <View style={styles.scrollContainer}>
               <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-                <SearchResultItem />
+                <SearchResultItem
+                  avatar="https://placehold.co/200x200/000000/FFFFFF/png"
+                  name="ABC"
+                  description="Alphabet"
+                />
+                <SearchResultItem
+                  avatar={
+                    "https://static.wikia.nocookie.net/all-worlds-alliance/images/6/69/Ac4e52e769285180dcf268e71d602ff8.jpg/revision/latest/scale-to-width-down/250?cb=20190713074315"
+                  }
+                  name="DEF"
+                  description="Alphabet"
+                />
                 <SearchResultItem />
                 <SearchResultItem />
                 <SearchResultItem />

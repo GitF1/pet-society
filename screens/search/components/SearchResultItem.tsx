@@ -1,20 +1,24 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const SearchResultItem = () => {
+const SearchResultItem = ({
+  avatar = "https://placehold.co/200x200/000000/FFFFFF/png",
+  name = "",
+  description = "",
+}) => {
   return (
     <View>
       <TouchableOpacity style={styles.searchResultItem}>
         <View style={styles.outerCircle}>
           <Image
             source={{
-              uri: "https://placehold.co/200x200/000000/FFFFFF/png",
+              uri: avatar,
             }}
             style={styles.image}
           />
         </View>
         <View style={styles.searchUserTextBox}>
-          <Text style={styles.searchUserText}>User</Text>
-          <Text style={styles.searchUserDescription}>User description</Text>
+          <Text style={styles.searchUserText}>{name}</Text>
+          <Text style={styles.searchUserDescription}>{description}</Text>
         </View>
       </TouchableOpacity>
     </View>
