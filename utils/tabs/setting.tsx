@@ -30,6 +30,11 @@ export const TAB_CONFIG: TabConfig[] = [
     icon: "bell",
   },
   {
+    name: "settings",
+    title: "Settings",
+    icon: "bell",
+  },
+  {
     name: "profile",
     title: "Profile",
     icon: "user",
