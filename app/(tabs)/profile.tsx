@@ -1,10 +1,12 @@
+import SettingComponent from "@/components/SettingsComponent/SettingComponent";
+import SettingsScreen from "@/screens/settings/SettingsScreen";
 import { View, Text, StyleSheet } from "react-native";
 
 export default function ProfileScreen() {
   return (
-    <View style={styles.container}>
-      <Text>Profile</Text>
-    </View>
+    // <View style={styles.container}>
+     <SettingsScreen/>
+    // </View>
   );
 }
 

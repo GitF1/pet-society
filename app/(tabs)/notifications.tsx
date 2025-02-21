@@ -1,9 +1,12 @@
+import SettingComponent from "@/components/SettingsComponent/SettingComponent";
+import SettingsScreen from "@/screens/settings/SettingsScreen";
 import { View, Text, StyleSheet } from "react-native";
 
 export default function NotificationsScreen() {
   return (
     <View style={styles.container}>
-      <Text>Notifications</Text>
+      
+     <SettingsScreen/>
     </View>
   );
 }
