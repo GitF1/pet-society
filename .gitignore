@@ -38,3 +38,5 @@ yarn-error.*
 
 # ide
 .idea/
+package-lock.json
+yarn.lock
