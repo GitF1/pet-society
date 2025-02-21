@@ -1,7 +1,7 @@
-import React from "react";
-import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
-import { Feather } from "@expo/vector-icons";
-import { IFriendRequest } from "@/types/user/friend";
+import React from 'react';
+import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
+import { Feather } from '@expo/vector-icons';
+import { IFriendRequest } from '@/types/user/friend';
 
 interface FriendRequestItemProps {
   item: IFriendRequest;
@@ -20,16 +20,10 @@ export const FriendRequestItem: React.FC<FriendRequestItemProps> = ({
       <Text style={styles.name}>{item.name}</Text>
       <Text style={styles.job}>{item.job}</Text>
     </View>
-    <TouchableOpacity
-      style={styles.acceptButton}
-      onPress={() => onAccept(item.id)}
-    >
+    <TouchableOpacity style={styles.acceptButton} onPress={() => onAccept(item.id)}>
       <Feather name="check-circle" size={24} color="white" />
     </TouchableOpacity>
-    <TouchableOpacity
-      style={styles.rejectButton}
-      onPress={() => onReject(item.id)}
-    >
+    <TouchableOpacity style={styles.rejectButton} onPress={() => onReject(item.id)}>
       <Feather name="x-circle" size={24} color="white" />
     </TouchableOpacity>
   </View>
@@ -37,12 +31,12 @@ export const FriendRequestItem: React.FC<FriendRequestItemProps> = ({
 
 const styles = StyleSheet.create({
   friendItem: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     paddingVertical: 12,
     paddingHorizontal: 20,
     borderBottomWidth: 1,
-    borderBottomColor: "#eee",
+    borderBottomColor: '#eee',
   },
   avatar: {
     width: 50,
@@ -54,21 +48,21 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   name: {
-    fontWeight: "bold",
+    fontWeight: 'bold',
     fontSize: 14,
   },
   job: {
     fontSize: 12,
-    color: "#777",
+    color: '#777',
   },
   acceptButton: {
-    backgroundColor: "#2C8850",
+    backgroundColor: '#2C8850',
     padding: 10,
     borderRadius: 50,
     marginRight: 8,
   },
   rejectButton: {
-    backgroundColor: "#E74C3C",
+    backgroundColor: '#E74C3C',
     padding: 10,
     borderRadius: 50,
   },

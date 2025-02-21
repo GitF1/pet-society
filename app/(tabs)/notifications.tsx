@@ -1,13 +1,10 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, StyleSheet } from 'react-native';
+import ActivityScreen from '@/screens/user/activity/Activity';
 
 export default function NotificationsScreen() {
-  return (
-    <View style={styles.container}>
-      <Text>Notifications</Text>
-    </View>
-  );
+  return <ActivityScreen />;
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: "center", alignItems: "center" },
+  container: { flex: 1, justifyContent: 'center', alignItems: 'center' },
 });
