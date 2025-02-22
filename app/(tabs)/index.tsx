@@ -1,3 +1,4 @@
+import HoangScreen from "@/screens/Hoang/Hoang";
 import MyHomeScreen from "@/screens/user/home/MyHomeScreen";
 import { Link } from "expo-router";
 import { View, Text, StyleSheet } from "react-native";

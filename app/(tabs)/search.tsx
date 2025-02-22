@@ -49,6 +49,7 @@ export default function SearchScreen() {
   const [hashtag, setHashtag] = useState("");
   return (
     <View style={styles.container}>
+
       <View style={styles.searchBar}>
         <Feather
           style={styles.searchIcon}
@@ -59,6 +60,7 @@ export default function SearchScreen() {
         <TextInput placeholder="Search #tag" style={styles.input} />
         <Feather style={styles.micIcon} name="mic" size={20} color="#777" />
       </View>
+
       <View style={styles.containerSearchFilter}>
         {["Discover", "Account", "Tags"].map((item) => (
           <MenuPillButton
@@ -69,6 +71,7 @@ export default function SearchScreen() {
           />
         ))}
       </View>
+      
       <View>
         {selected === "Discover" && (
           <View style={styles.containerFlatList}>
