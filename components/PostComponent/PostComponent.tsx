@@ -1,5 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
+import { router } from "expo-router";
 import { Image, StyleSheet, Text, View } from "react-native";
+
 
 const PostComponent: React.FC = () => {
     return (
@@ -9,7 +11,7 @@ const PostComponent: React.FC = () => {
                 <View style={styles.postHeader}>
                     <Image style={styles.avatarImage} source={require('../../assets/images/avatar/avatar3.png')}/>
                     <View style={styles.postTitle}>
-                        <Text style={styles.postAuthor}>Minh Vinh</Text>
+                        <Text style={styles.postAuthor} onPress={()=> router.push("/user/profile")}>Minh Vinh</Text>
                         <Text style={styles.postGenre}>Coder</Text>
                     </View>
                     <Ionicons style={styles.threeDots} name='ellipsis-horizontal' />
@@ -33,7 +35,7 @@ const PostComponent: React.FC = () => {
 
                         <View style={styles.footerItemContainer}>
                             <Ionicons style={styles.commentIcon} name="chatbox-ellipses-outline"/>
-                            <Text style={styles.postActionText}>Comment</Text>
+                            <Text style={styles.postActionText} onPress={()=> router.push("/user/comment")}>Comment</Text>
                         </View>
 
                         <View style={styles.footerItemContainer}>
