@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Feather';
 const profileData = {
   username: 'Minh Vinh',
   role: 'Coder',
-  profileImage: require('../../assets/images/avatar/avatar1.png'),
+  profileImage: require('../../assets/images/avatar/avatar3.png'),
   following: 20,
   followers: '30',
   posts: 10,

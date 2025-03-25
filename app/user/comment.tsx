@@ -92,7 +92,7 @@ export default function CommentsScreen({ onClose }) {
       </View>
       <FlatList data={comments} keyExtractor={(item) => item.id} renderItem={({ item }) => <CommentItem item={item} />} />
       <View style={styles.inputContainer}>
-        <Image source={require('../../assets/images/avatar/avatar1.png')} style={styles.avatar} />
+        <Image source={require('../../assets/images/avatar/avatar3.png')} style={styles.avatar} />
 <TextInput placeholder="Add a comment..." style={styles.input} />
         <TouchableOpacity>
           <FontAwesome name="send" size={20} color="green" />
