@@ -3,9 +3,9 @@ import { View, Text, Image, StyleSheet, TouchableOpacity, FlatList } from 'react
 import Icon from 'react-native-vector-icons/Feather';
 
 const profileData = {
-  username: 'Đình Duy',
+  username: 'Minh Vinh',
   role: 'Coder',
-  profileImage: require('../../assets/images/avatar/avatar1.png'),
+  profileImage: require('../../assets/images/avatar/avatar3.png'),
   following: 20,
   followers: '30',
   posts: 10,
@@ -48,7 +48,7 @@ const ProfileScreen = () => {
             <Text style={styles.username}>{profileData.username}</Text>
             <Text style={styles.role}>@{profileData.role}</Text>
             <TouchableOpacity style={styles.editButton}>
-              <Text style={styles.editText}>Edit</Text>
+              <Text style={styles.editText}>Follow</Text>
             </TouchableOpacity>
           </View>
         </View>
