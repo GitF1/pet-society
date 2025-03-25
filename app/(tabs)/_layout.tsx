@@ -20,14 +20,14 @@ export default function TabLayout() {
       ),
     };
 
-    if (tab.name === 'profile') {
-      return {
-        ...baseOptions,
-        tabBarButton: (props: any) => (
-          <Pressable {...props} onPress={() => setProfileModalVisible(true)} />
-        ),
-      };
-    }
+    // if (tab.name === 'profile') {
+    //   return {
+    //     ...baseOptions,
+    //     tabBarButton: (props: any) => (
+    //       <Pressable {...props} onPress={() => setProfileModalVisible(true)} />
+    //     ),
+    //   };
+    // }
 
     return baseOptions;
   }, []);

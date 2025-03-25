@@ -17,10 +17,9 @@ export {
   ErrorBoundary,
 } from "expo-router";
 
-// export const unstable_settings = {
-//   // Ensure that reloading on `/modal` keeps a back button present.
-//   initialRouteName: "(tabs)",
-// };
+export const unstable_settings = {
+  initialRouteName: "(tabs)",
+};
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -54,7 +53,7 @@ function RootLayoutNav() {
   const router = useRouter();
 
   useEffect(() => {
-    router.replace("/hoang"); // ✅ Điều hướng ngay khi app chạy
+    router.replace("/hoang"); 
   }, []);
 
   return (
