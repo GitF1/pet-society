@@ -2,10 +2,9 @@ import { View, TextInput, StyleSheet, FlatList, Image, ScrollView, Dimensions } 
 import { Feather } from '@expo/vector-icons';
 
 import { useState } from 'react';
-import SearchHistoryHeader from '@/screens/search/components/SearchHistoryHeader';
+
 import MenuPillButton from '@/screens/search/components/MenuPillButton';
-import SearchResultItem from '@/screens/search/components/SearchResultItem';
-import HashtagItem from '@/screens/search/components/HashtagItem';
+
 import SearchBar from './components/SearchBar';
 import DiscoverTab from './components/DiscoverTab';
 import AccountTab from './components/AccountTab';

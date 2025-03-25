@@ -1,9 +1,12 @@
+import MyModal from '@/components/MyModal';
+import { useState } from 'react';
+import { TouchableOpacity } from 'react-native';
 import { Dimensions, FlatList, Image, StyleSheet, View } from 'react-native';
 
 const images = [
   {
     id: '1',
-    uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4asPQgTA-eR7b4vMq-tijmG78uZaKz34ICw&s',
+    uri: 'https://upload.wikimedia.org/wikipedia/en/3/34/Cars_2006.jpg',
   },
   {
     id: '2',
@@ -39,18 +42,35 @@ const images = [
 const screenWidth = Dimensions.get('window').width;
 const imageSize = screenWidth / 2 - 40; // 2 columns with some spacing
 
-
 const DiscoverTab: React.FC = () => {
+  const [modalVisible, setModalVisible] = useState(false);
+  const [currUri, setCurrUri] = useState('');
+
   return (
     <View style={styles.containerFlatList}>
+      <MyModal
+        visible={modalVisible}
+        dismiss={() => {
+          setModalVisible(false);
+        }}>
+        <View style={styles.modalContainer}>
+          <Image source={{ uri: currUri }} style={styles.imageModal} />
+        </View>
+      </MyModal>
+
       <FlatList
         data={images}
         keyExtractor={item => item.id}
         numColumns={2} // Two-column layout
         renderItem={({ item }) => (
-          <View style={styles.imageContainer}>
+          <TouchableOpacity
+            onPress={() => {
+              setCurrUri(item.uri);
+              setModalVisible(!modalVisible);
+            }}
+            style={styles.imageContainer}>
             <Image source={{ uri: item.uri }} style={styles.imageFlatList} />
-          </View>
+          </TouchableOpacity>
         )}
         contentContainerStyle={styles.flatListContainer}
       />
@@ -65,6 +85,24 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: '#fff',
   },
+  modalContainer: {
+    flex: 1, // Take full height
+    // justifyContent: 'center', // Center vertically
+    // alignItems: 'center', // Center horizontally
+    alignSelf: 'center',
+
+    flexDirection: 'row',
+    // marginVertical: 250,
+    // justifySelf: 'center',
+    // padding: 100,
+
+    // backgroundColor: '#fff',
+  },
+  imageModal: {
+    width: imageSize * 2,
+    height: imageSize * 2,
+    borderRadius: 10, // Optional: rounded corners
+  },
   imageContainer: {
     // flex: 1,
 
@@ -78,6 +116,39 @@ const styles = StyleSheet.create({
 
   flatListContainer: {
     paddingBottom: 20, // Space at the bottom
+  },
+
+  centeredView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 35,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+
+  buttonOpen: {
+    backgroundColor: '#F194FF',
+  },
+  buttonClose: {
+    backgroundColor: '#2196F3',
+  },
+
+  modalText: {
+    marginBottom: 15,
+    textAlign: 'center',
   },
 });
 
