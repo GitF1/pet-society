@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const MenuPillButton = ({ item, selected, setSelected }) => {3
+const MenuPillButton = ({ item, selected, setSelected }) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity

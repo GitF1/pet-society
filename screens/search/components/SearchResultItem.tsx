@@ -1,9 +1,15 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-const SearchResultItem = ({
-  avatar = "https://placehold.co/200x200/000000/FFFFFF/png",
-  name = "",
-  description = "",
+interface SearchResultItemProps {
+  avatar: string;
+  name: string;
+  description: string;
+}
+
+const SearchResultItem: React.FC<SearchResultItemProps> = ({
+  avatar = 'https://placehold.co/200x200/000000/FFFFFF/png',
+  name = '',
+  description = '',
 }) => {
   return (
     <View>
@@ -31,23 +37,23 @@ const styles = StyleSheet.create({
     height: 60,
     borderRadius: 40, // Half of width/height to make it circular
     borderWidth: 3,
-    borderColor: "green", // Adjust border color
-    justifyContent: "center",
-    alignItems: "center",
-    overflow: "hidden",
+    borderColor: 'green', // Adjust border color
+    justifyContent: 'center',
+    alignItems: 'center',
+    overflow: 'hidden',
   },
   image: {
-    width: "90%", // Slightly smaller than the container to fit inside
-    height: "90%",
+    width: '90%', // Slightly smaller than the container to fit inside
+    height: '90%',
     borderRadius: 30, // Keep the image circular
   },
   searchResultItem: {
-    display: "flex",
-    flexDirection: "row",
+    display: 'flex',
+    flexDirection: 'row',
     marginBottom: 10,
   },
   searchUserText: {},
-  searchUserDescription: { color: "#777" },
+  searchUserDescription: { color: '#777' },
   searchUserTextBox: {
     marginLeft: 10,
     marginTop: 10,

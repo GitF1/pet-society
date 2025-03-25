@@ -1,7 +1,12 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 
-const HashtagItem = () => {
+interface HashtagItemProp {
+  hashtag: string;
+  description: string;
+}
+
+const HashtagItem: React.FC<HashtagItemProp> = ({ hashtag = '', description = '' }) => {
   return (
     <View>
       <TouchableOpacity style={styles.searchResultItem}>
@@ -9,10 +14,8 @@ const HashtagItem = () => {
           <FontAwesome name="hashtag" size={24} color="black" />
         </View>
         <View style={styles.searchUserTextBox}>
-          <Text style={styles.searchUserText}>#graphic design</Text>
-          <Text style={styles.searchUserDescription}>
-            Graphic design description
-          </Text>
+          <Text style={styles.searchUserText}>{hashtag}</Text>
+          <Text style={styles.searchUserDescription}>{description}</Text>
         </View>
       </TouchableOpacity>
     </View>
@@ -21,18 +24,18 @@ const HashtagItem = () => {
 
 const styles = StyleSheet.create({
   image: {
-    width: "90%", // Slightly smaller than the container to fit inside
-    height: "90%",
+    width: '90%', // Slightly smaller than the container to fit inside
+    height: '90%',
     borderRadius: 30, // Keep the image circular
   },
   searchResultItem: {
-    display: "flex",
-    flexDirection: "row",
+    display: 'flex',
+    flexDirection: 'row',
     marginBottom: 10,
-    alignItems: "center",
+    alignItems: 'center',
   },
   searchUserText: {},
-  searchUserDescription: { color: "#777" },
+  searchUserDescription: { color: '#777' },
   searchUserTextBox: {
     marginLeft: 10,
     marginTop: 10,
