@@ -57,6 +57,7 @@ function RootLayoutNav() {
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="hoang" />
         <Stack.Screen name="(tabs)" />
+        <Stack.Screen name="user/post" />
         <Stack.Screen name="user/activity" />
         <Stack.Screen name="user/friend-request" />
         <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
