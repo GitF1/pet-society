@@ -41,7 +41,7 @@ export default function TabLayout() {
             backgroundColor: Colors[colorScheme ?? 'light'].primary,
             height: 60,
           },
-          headerShown: useClientOnlyValue(false, true),
+          headerShown: useClientOnlyValue(false, false),
         }}>
         {TAB_CONFIG.map(tab => (
           <Tabs.Screen key={tab.name} name={tab.name} options={getTabOptions(tab)} />
