@@ -28,8 +28,12 @@ const MyHomeScreen: React.FC = () => {
       <View style={styles.header}>
         <Text style={styles.headerText}>Media X</Text>
         <View style={styles.headerIconContainer}>
-          <TouchableOpacity onPress={() => router.push('/user/post')}>
+          <TouchableOpacity>
             <Ionicons name="add-outline" style={styles.headerIcon} />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => router.push('/user/friend-request')}>
+            <Ionicons name="people-outline" style={styles.headerIcon} />
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => router.push('/(tabs)/notifications')}>
