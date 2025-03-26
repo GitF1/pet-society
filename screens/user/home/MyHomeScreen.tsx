@@ -1,27 +1,16 @@
 import PostComponent from "@/components/PostComponent/PostComponent";
 import { Ionicons } from "@expo/vector-icons";
-import { useEffect } from "react";
-import { Image, StyleSheet, Text, TouchableOpacity, View, ScrollView, Button } from "react-native";
-
-import { FlatList } from "react-native";
-
-var avatarImageFiles: string[] = [];
+import { useEffect, useState } from "react";
+import { Image, StyleSheet, Text, TouchableOpacity, View, ScrollView } from "react-native";
 
 const MyHomeScreen: React.FC = () => {
-
-    useEffect(() => {
-        for(let i = 1; i <= 5; ++i) {
-            avatarImageFiles.push(`avatar${i}.png`);
-        }
-    }, []);
-
-    // function renderImages() {
-    //     return avatarImageFiles.map((file) => {
-    //         return (
-    //             <Image style={styles.avatarImage} source={require('/images/avatar/avatar1.png')}/>
-    //         )
-    //     })
-    // }
+    const [users, setUsers] = useState([
+        { name: "You", avatar: require('../../../assets/images/avatar/avatar1.png') },
+        { name: "Đình Duy", avatar: require('../../../assets/images/avatar/avatar2.png') },
+        { name: "Minh Vinh", avatar: require('../../../assets/images/avatar/avatar3.png') },
+        { name: "Thái Hoàng", avatar: require('../../../assets/images/avatar/avatar4.png') },
+        { name: "Văn Toàn", avatar: require('../../../assets/images/avatar/avatar5.png') },
+    ]);
 
     return (
         <View style={styles.container}>
@@ -29,53 +18,34 @@ const MyHomeScreen: React.FC = () => {
                 <Text style={styles.headerText}>Media X</Text>
                 <View style={styles.headerIconContainer}>
                     <TouchableOpacity>
-                        <Ionicons name='add-outline' style={styles.headerIcon}/>
+                        <Ionicons name='add-outline' style={styles.headerIcon} />
                     </TouchableOpacity>
 
                     <TouchableOpacity>
-                        <Ionicons name='notifications-outline' style={styles.headerIcon}/>
+                        <Ionicons name='notifications-outline' style={styles.headerIcon} />
                     </TouchableOpacity>
                 </View>
             </View>
 
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                 <View style={styles.allAvatarsContainer}>
-                    <View style={styles.avatarContainer}>
-                        <Image style={styles.avatarImage} source={require('../../../assets/images/avatar/avatar1.png')}/>
-                        <Text style={styles.nameText}>You</Text>
-                    </View>
-
-                    <View style={styles.avatarContainer}>
-                        <Image style={styles.avatarImage} source={require('../../../assets/images/avatar/avatar2.png')}/>
-                        <Text style={styles.nameText}>Đình Duy</Text>
-                    </View>
-
-                    <View style={styles.avatarContainer}>
-                        <Image style={styles.avatarImage} source={require('../../../assets/images/avatar/avatar3.png')}/>
-                        <Text style={styles.nameText}>Minh Vinh</Text>
-                    </View>
-
-                    <View style={styles.avatarContainer}>
-                        <Image style={styles.avatarImage} source={require('../../../assets/images/avatar/avatar4.png')}/>
-                        <Text style={styles.nameText}>Thái Hoàng</Text>
-                    </View>
-
-                    <View style={styles.avatarContainer}>
-                        <Image style={styles.avatarImage} source={require('../../../assets/images/avatar/avatar5.png')}/>
-                        <Text style={styles.nameText}>Văn Toàn</Text>
-                    </View>
+                    {users.map((user, index) => (
+                        <View key={index} style={styles.avatarContainer}>
+                            <Image style={styles.avatarImage} source={user.avatar} />
+                            <Text style={styles.nameText}>{user.name}</Text>
+                        </View>
+                    ))}
                 </View>
             </ScrollView>
 
-            <PostComponent/>
-
+            <PostComponent />
         </View>
-    )
-}
+    );
+};
 
 const colors = {
     green: '#3c947c',
-}
+};
 
 const styles = StyleSheet.create({
     container: {
@@ -88,12 +58,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        alignSelf: 'center', // width 90% sẽ nằm ở center
+        alignSelf: 'center',
         width: '90%',
-    },
-
-    body: {
-
     },
 
     headerText: {
@@ -111,16 +77,11 @@ const styles = StyleSheet.create({
         padding: 10,
         fontSize: 28,
     },
-    
-    footer: {
-
-    },
 
     allAvatarsContainer: {
         flexDirection: 'row',
-        flexWrap: 'nowrap',
-        marginHorizontal: 20, //*
-        marginVertical: 20, //*
+        marginHorizontal: 20,
+        marginVertical: 20,
         gap: 20,
     },
 
@@ -140,9 +101,7 @@ const styles = StyleSheet.create({
 
     nameText: {
         marginTop: 6,
-    }
-
+    },
 });
-
 
 export default MyHomeScreen;
