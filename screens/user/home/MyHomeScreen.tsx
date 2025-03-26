@@ -29,7 +29,11 @@ const MyHomeScreen: React.FC = () => {
         <Text style={styles.headerText}>Media X</Text>
         <View style={styles.headerIconContainer}>
           <TouchableOpacity>
-            <Ionicons name="add-outline" style={styles.headerIcon} />
+            <Ionicons
+              name="add-outline"
+              style={styles.headerIcon}
+              onPress={() => router.push('/user/post')}
+            />
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => router.push('/user/friend-request')}>
