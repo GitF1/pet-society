@@ -1,53 +1,203 @@
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 
 
 const PostComponent: React.FC = () => {
     return (
-        <View style={styles.container}>
-            <View style={styles.postContainer}>
+        <ScrollView showsVerticalScrollIndicator={false}>
+            <View style={styles.container}>
+                <View style={styles.postContainer}>
 
-                <View style={styles.postHeader}>
-                    <Image style={styles.avatarImage} source={require('../../assets/images/avatar/avatar3.png')}/>
-                    <View style={styles.postTitle}>
-                        <Text style={styles.postAuthor} onPress={()=> router.push("/user/profile")}>Minh Vinh</Text>
-                        <Text style={styles.postGenre}>Coder</Text>
-                    </View>
-                    <Ionicons style={styles.threeDots} name='ellipsis-horizontal' />
-                </View>
-
-                <View style={styles.postImageContainer}>
-                    <Image 
-                        style={styles.postImage}
-                        source={require('../../assets/images/wallpaper.jpg')}
-                    />
-                    <Ionicons style={styles.copyIcons} name='copy'/>
-                </View>
-
-                <View style={styles.postFooter}>
-
-                    <View style={styles.postActionsContainer}>
-                        <View style={styles.footerItemContainer}>
-                            <Ionicons style={styles.heartIcon} name="heart-outline"/>
-                            <Text style={styles.postActionText}>Like</Text>
+                    <View style={styles.postHeader}>
+                        <Image style={styles.avatarImage} source={require('../../assets/images/avatar/avatar3.png')}/>
+                        <View style={styles.postTitle}>
+                            <Text style={styles.postAuthor} onPress={()=> router.push("/user/profile")}>Minh Vinh</Text>
+                            <Text style={styles.postGenre}>Coder</Text>
                         </View>
-
-                        <View style={styles.footerItemContainer}>
-                            <Ionicons style={styles.commentIcon} name="chatbox-ellipses-outline"/>
-                            <Text style={styles.postActionText} onPress={()=> router.push("/user/comment")}>Comment</Text>
-                        </View>
-
-                        <View style={styles.footerItemContainer}>
-                            <Ionicons style={styles.shareIcon} name="share-outline"/>
-                            <Text style={styles.postActionText}>Share</Text>
-                        </View>
+                        <Ionicons style={styles.threeDots} name='ellipsis-horizontal' />
                     </View>
 
-                    <Text style={styles.likesCount}>Liked by you and 500 others</Text>
+                    <View style={styles.postImageContainer}>
+                        <Image 
+                            style={styles.postImage}
+                            source={require('../../assets/images/wallpaper.jpg')}
+                            resizeMode="stretch"
+                        />
+                        <Ionicons style={styles.copyIcons} name='copy'/>
+                    </View>
+
+                    <View style={styles.contentContainer}>
+                        <Text style={styles.content}>Such a beautiful image!</Text>
+                    </View>
+
+                    <View style={styles.postFooter}>
+
+                        <View style={styles.postActionsContainer}>
+                            <View style={styles.footerItemContainer}>
+                                <Ionicons style={styles.heartIcon} name="heart-outline"/>
+                                <Text style={styles.postActionText}>Like</Text>
+                            </View>
+
+                            <View style={styles.footerItemContainer}>
+                                <Ionicons style={styles.commentIcon} name="chatbox-ellipses-outline"/>
+                                <Text style={styles.postActionText} onPress={()=> router.push("/user/comment")}>Comment</Text>
+                            </View>
+
+                            <View style={styles.footerItemContainer}>
+                                <Ionicons style={styles.shareIcon} name="share-outline"/>
+                                <Text style={styles.postActionText}>Share</Text>
+                            </View>
+                        </View>
+
+                        <Text style={styles.likesCount}>Liked by you and 500 others</Text>
+                    </View>
                 </View>
+
+
+                <View style={styles.postContainer}>
+
+                    <View style={styles.postHeader}>
+                        <Image style={styles.avatarImage} source={require('../../assets/images/avatar/avatar2.png')}/>
+                        <View style={styles.postTitle}>
+                            <Text style={styles.postAuthor} onPress={()=> router.push("/user/profile")}>Đình Duy</Text>
+                            <Text style={styles.postGenre}>Business Analysist</Text>
+                        </View>
+                        <Ionicons style={styles.threeDots} name='ellipsis-horizontal' />
+                    </View>
+
+                    <View style={styles.postImageContainer}>
+                        <Image 
+                            style={styles.postImage}
+                            source={require('../../assets/images/post_images/duy2.png')}
+                            resizeMode="stretch"
+                        />
+                        <Ionicons style={styles.copyIcons} name='copy'/>
+                    </View>
+
+                    <View style={styles.contentContainer}>
+                        <Text style={styles.content}>This game has really nice graphics!</Text>
+                    </View>
+
+                    <View style={styles.postFooter}>
+
+                        <View style={styles.postActionsContainer}>
+                            <View style={styles.footerItemContainer}>
+                                <Ionicons style={styles.heartIcon} name="heart-outline"/>
+                                <Text style={styles.postActionText}>Like</Text>
+                            </View>
+
+                            <View style={styles.footerItemContainer}>
+                                <Ionicons style={styles.commentIcon} name="chatbox-ellipses-outline"/>
+                                <Text style={styles.postActionText} onPress={()=> router.push("/user/comment")}>Comment</Text>
+                            </View>
+
+                            <View style={styles.footerItemContainer}>
+                                <Ionicons style={styles.shareIcon} name="share-outline"/>
+                                <Text style={styles.postActionText}>Share</Text>
+                            </View>
+                        </View>
+
+                        <Text style={styles.likesCount}>Liked by you and 10 others</Text>
+                    </View>
+                </View>
+
+                <View style={styles.postContainer}>
+
+                    <View style={styles.postHeader}>
+                        <Image style={styles.avatarImage} source={require('../../assets/images/avatar/avatar4.png')}/>
+                        <View style={styles.postTitle}>
+                            <Text style={styles.postAuthor} onPress={()=> router.push("/user/profile")}>Thái Hoàng</Text>
+                            <Text style={styles.postGenre}>Programmer</Text>
+                        </View>
+                        <Ionicons style={styles.threeDots} name='ellipsis-horizontal' />
+                    </View>
+
+                    <View style={styles.postImageContainer}>
+                        <Image 
+                            style={styles.postImage}
+                            source={require('../../assets/images/post_images/hoang.jpg')}
+                            resizeMode="stretch"
+                        />
+                        <Ionicons style={styles.copyIcons} name='copy'/>
+                    </View>
+
+                    <View style={styles.contentContainer}>
+                        <Text style={styles.content}>This anime is amazing! Gut Job!</Text>
+                    </View>
+
+                    <View style={styles.postFooter}>
+
+                        <View style={styles.postActionsContainer}>
+                            <View style={styles.footerItemContainer}>
+                                <Ionicons style={styles.heartIcon} name="heart-outline"/>
+                                <Text style={styles.postActionText}>Like</Text>
+                            </View>
+
+                            <View style={styles.footerItemContainer}>
+                                <Ionicons style={styles.commentIcon} name="chatbox-ellipses-outline"/>
+                                <Text style={styles.postActionText} onPress={()=> router.push("/user/comment")}>Comment</Text>
+                            </View>
+
+                            <View style={styles.footerItemContainer}>
+                                <Ionicons style={styles.shareIcon} name="share-outline"/>
+                                <Text style={styles.postActionText}>Share</Text>
+                            </View>
+                        </View>
+
+                        <Text style={styles.likesCount}>Liked by you and 200 others</Text>
+                    </View>
+                </View>
+
+                <View style={styles.postContainer}>
+
+                    <View style={styles.postHeader}>
+                        <Image style={styles.avatarImage} source={require('../../assets/images/avatar/avatar5.png')}/>
+                        <View style={styles.postTitle}>
+                            <Text style={styles.postAuthor} onPress={()=> router.push("/user/profile")}>Văn Toàn</Text>
+                            <Text style={styles.postGenre}>Designer</Text>
+                        </View>
+                        <Ionicons style={styles.threeDots} name='ellipsis-horizontal' />
+                    </View>
+
+                    <View style={styles.postImageContainer}>
+                        <Image 
+                            style={styles.postImage}
+                            source={require('../../assets/images/post_images/toan.jpg')}
+                            resizeMode="stretch"
+                        />
+                        <Ionicons style={styles.copyIcons} name='copy'/>
+                    </View>
+
+                    <View style={styles.contentContainer}>
+                        <Text style={styles.content}>I love the universe!</Text>
+                    </View>
+
+                    <View style={styles.postFooter}>
+
+                        <View style={styles.postActionsContainer}>
+                            <View style={styles.footerItemContainer}>
+                                <Ionicons style={styles.heartIcon} name="heart-outline"/>
+                                <Text style={styles.postActionText}>Like</Text>
+                            </View>
+
+                            <View style={styles.footerItemContainer}>
+                                <Ionicons style={styles.commentIcon} name="chatbox-ellipses-outline"/>
+                                <Text style={styles.postActionText} onPress={()=> router.push("/user/comment")}>Comment</Text>
+                            </View>
+
+                            <View style={styles.footerItemContainer}>
+                                <Ionicons style={styles.shareIcon} name="share-outline"/>
+                                <Text style={styles.postActionText}>Share</Text>
+                            </View>
+                        </View>
+
+                        <Text style={styles.likesCount}>Liked by you and 0 others</Text>
+                    </View>
+                </View>
+
             </View>
-        </View>
+        </ScrollView>
     )
 }
 
@@ -58,7 +208,8 @@ const colors = {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center'
+        alignItems: 'center',
+        gap: 20
     },
 
     postContainer: {
@@ -110,7 +261,8 @@ const styles = StyleSheet.create({
     },
 
     postImage: {
-        width: '85%',
+        width: '85%',   
+        height: 300,
         alignSelf: 'center',    
         borderRadius: 18,
         flex: 1,
@@ -171,6 +323,16 @@ const styles = StyleSheet.create({
     postActionsContainer: {
         flexDirection: 'row',
     },
+
+    contentContainer: {
+        width: '85%',
+        alignSelf: 'center',
+        marginTop: 10
+    },
+
+    content: {
+        
+    }
 })
 
 export default PostComponent;
