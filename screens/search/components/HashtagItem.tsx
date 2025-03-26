@@ -4,12 +4,19 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 interface HashtagItemProp {
   hashtag: string;
   description: string;
+  setSearchQuery: (query: string) => void;
 }
 
-const HashtagItem: React.FC<HashtagItemProp> = ({ hashtag = '', description = '' }) => {
+const HashtagItem: React.FC<HashtagItemProp> = ({
+  hashtag = '',
+  description = '',
+  setSearchQuery,
+}) => {
   return (
     <View>
-      <TouchableOpacity style={styles.searchResultItem}>
+      <TouchableOpacity
+        style={styles.searchResultItem}
+        onPress={() => setSearchQuery(`#${hashtag}`)}>
         <View style={styles.hashtagIcon}>
           <FontAwesome name="hashtag" size={24} color="black" />
         </View>

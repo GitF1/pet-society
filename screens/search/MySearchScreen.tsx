@@ -16,10 +16,11 @@ const hashtags = ['#helloform', '#clothesfashiondesign', 'ux', '#clothesfashiond
 
 const MySearchScreen: React.FC = () => {
   const [selected, setSelected] = useState('Discover');
+  const [searchQuery, setSearchQuery] = useState('');
 
   return (
     <View style={styles.container}>
-      <SearchBar />
+      <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 
       <View style={styles.containerSearchFilter}>
         {['Discover', 'Account', 'Tags'].map(item => (
@@ -29,7 +30,7 @@ const MySearchScreen: React.FC = () => {
 
       {selected === 'Discover' && <DiscoverTab />}
       {selected === 'Account' && <AccountTab />}
-      {selected === 'Tags' && <TagsTab />}
+      {selected === 'Tags' && <TagsTab setSearchQuery={setSearchQuery} />}
     </View>
   );
 };

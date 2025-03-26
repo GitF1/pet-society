@@ -1,10 +1,14 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-const SearchHistoryHeader = () => {
+interface SearchHistoryHeaderProps {
+  clear: () => void;
+}
+
+const SearchHistoryHeader: React.FC<SearchHistoryHeaderProps> = ({ clear }) => {
   return (
     <View style={styles.searchHistoryTitle}>
       <Text style={styles.searchHistoryTitleRecentText}>Recent</Text>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => clear()}>
         <Text style={styles.searchHistoryTitleClearAll}>Clear All</Text>
       </TouchableOpacity>
     </View>
@@ -13,16 +17,16 @@ const SearchHistoryHeader = () => {
 
 const styles = StyleSheet.create({
   searchHistoryTitle: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     marginBottom: 10,
   },
   searchHistoryTitleRecentText: {
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   searchHistoryTitleClearAll: {
-    color: "#3B9678",
+    color: '#3B9678',
   },
 });
 

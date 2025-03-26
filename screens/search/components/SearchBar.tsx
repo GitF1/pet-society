@@ -1,11 +1,21 @@
 import { Feather } from '@expo/vector-icons';
 import { StyleSheet, TextInput, View } from 'react-native';
 
-const SearchBar: React.FC = () => {
+interface SearchBarProps {
+  searchQuery: string;
+  setSearchQuery: (query: string) => void;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ searchQuery, setSearchQuery }) => {
   return (
     <View style={styles.searchBar}>
       <Feather style={styles.searchIcon} name="search" size={20} color="#777" />
-      <TextInput placeholder="Search #tag" style={styles.input} />
+      <TextInput
+        value={searchQuery}
+        onChangeText={setSearchQuery}
+        placeholder="Search #tag"
+        style={styles.input}
+      />
       <Feather style={styles.micIcon} name="mic" size={20} color="#777" />
     </View>
   );

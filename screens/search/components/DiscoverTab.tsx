@@ -12,8 +12,14 @@ const images = [
     id: '2',
     uri: 'https://upload.wikimedia.org/wikipedia/en/3/34/Cars_2006.jpg',
   },
-  { id: '3', uri: 'https://placehold.co/200x200/000000/FFFFFF/png' },
-  { id: '4', uri: 'https://placehold.co/200x200/000000/FFFFFF/png' },
+  {
+    id: '3',
+    uri: 'https://images.pexels.com/photos/1172064/pexels-photo-1172064.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  },
+  {
+    id: '4',
+    uri: 'https://images.pexels.com/photos/163856/sunset-train-road-163856.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  },
   { id: '5', uri: 'https://placehold.co/200x200/000000/FFFFFF/png' },
   { id: '6', uri: 'https://placehold.co/200x200' },
   { id: '7', uri: 'https://placehold.co/200x200/000000/FFFFFF/png' },

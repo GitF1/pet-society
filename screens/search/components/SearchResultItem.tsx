@@ -1,4 +1,5 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { router } from 'expo-router';
 
 interface SearchResultItemProps {
   avatar: string;
@@ -13,7 +14,9 @@ const SearchResultItem: React.FC<SearchResultItemProps> = ({
 }) => {
   return (
     <View>
-      <TouchableOpacity style={styles.searchResultItem}>
+      <TouchableOpacity
+        style={styles.searchResultItem}
+        onPress={() => router.push('/user/profile')}>
         <View style={styles.outerCircle}>
           <Image
             source={{
